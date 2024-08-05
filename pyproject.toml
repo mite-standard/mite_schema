@@ -17,14 +17,13 @@ keywords = [
     "genomics"
 ]
 classifiers = [
-    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
     "Operating System :: POSIX :: Linux",
     "Development Status :: 4 - Beta",
     "Topic :: Scientific/Engineering :: Bio-Informatics",
     "Topic :: Scientific/Engineering :: Chemistry"
 ]
-
 dependencies = [
     "argparse~=1.4",
     "coloredlogs~=15.0",
@@ -32,6 +31,10 @@ dependencies = [
     "pydantic~=2.8",
     "referencing~=0.35",
 ]
+
+[project.urls]
+Homepage = "https://github.com/mite-standard/mite_schema"
+Issues = "https://github.com/mite-standard/mite_schema/issues"
 
 [project.scripts]
 mite_schema = "mite_schema.main:main"
