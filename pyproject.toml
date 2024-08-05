@@ -1,31 +1,35 @@
-[project]
-name = "modern_python"
-version = "1.0.1"
-description = "Example repository demonstrating a modern Python project setup"
-readme = "README.md"
-requires-python = ">=3.12"
-license-files = { paths = ["LICENSE"] }
-authors = [
-    { name = "Your Name Here", email = "your@name.com" }
-]
-
-dependencies = [
-    "coloredlogs~=15.0.1",
-]
-
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
+[project]
+name = "mite_schema"
+version = "0.9.0"
+description = "Containing the Minimum Information about a Tailoring Enzymes schema and auxiliary methods"
+readme = "README.md"
+requires-python = ">=3.12"
+license-files = { paths = ["LICENSE"] }
+authors = [
+    { name = "Mitja M. Zdouc", email = "mmzdouc@gmail.com" }
+]
+
+dependencies = [
+    "argparse~=1.4",
+    "coloredlogs~=15.0",
+    "jsonschema~=4.23",
+    "pydantic~=2.8",
+    "referencing~=0.35",
+    "requests~=2.32"
+]
+
 [project.scripts]
-modern_python = "modern_python.main:main"
+mite_schema = "mite_schema.main:main"
 
 [project.optional-dependencies]
 dev = [
-    "black~=24.4.2",
-    "pre-commit~=3.4.0",
-    "pytest~=7.4.2",
-    "ruff~=0.5.0"
+    "pre-commit~=3.4",
+    "pytest~=7.4",
+    "ruff~=0.5"
 ]
 
 [tool.hatch.envs.dev]
@@ -63,9 +67,8 @@ select = [
 ignore = [
     # whitespace-before-punctuation
     "E203",
+    # percent-format-invalid-format
+    "E501",
+    # mixed-case-variable-in-class-scope
+    "N815"
 ]
-
-[tool.mypy]
-exclude= 'tests'
-strict = true
-ignore_missing_imports = true

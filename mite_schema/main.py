@@ -1,4 +1,4 @@
-MIT License
+"""Command line interface of mite_schema
 
 Copyright (c) 2024 to present Mitja M. Zdouc and individual contributors.
 
@@ -19,3 +19,40 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+"""
+
+import logging
+import sys
+from importlib import metadata
+
+import coloredlogs
+
+
+def config_logger(verboseness: str) -> logging.Logger:
+    """Set up a named logger with nice formatting
+
+    Args:
+        verboseness: sets the logging verboseness
+
+    Returns:
+        A Logger object
+    """
+    logger = logging.getLogger("mite_schema")
+    logger.setLevel(getattr(logging, verboseness))
+    console_handler = logging.StreamHandler(sys.stdout)
+    console_handler.setFormatter(
+        coloredlogs.ColoredFormatter(
+            "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+        )
+    )
+    logger.addHandler(console_handler)
+    return logger
+
+
+def main() -> None:
+    """Function to execute main body of code"""
+    print("hello world")
+
+
+if __name__ == "__main__":
+    main()
