@@ -30,11 +30,19 @@
       "uniqueItems": true
     },
     "databaseIds": {
-      "type": "array",
-      "items": {
-        "$ref": "#/$defs/databaseId"
-      },
-      "uniqueItems": true
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "rhea": {
+          "$ref": "#/$defs/rhea"
+        },
+        "mite": {
+          "$ref": "#/$defs/mite"
+        },
+        "ec": {
+          "$ref": "#/$defs/ec"
+        }
+      }
     },
     "reactionSMARTS": {
       "title": "A reaction SMARTS pattern describing the (sub)structure to match and the reaction to perform.",
@@ -139,20 +147,20 @@
         "Other"
       ]
     },
-    "databaseId": {
-      "title": "Cross-reference to databases.",
+    "rhea": {
+      "title": "RHEA cross-reference",
       "type": "string",
-      "oneOf": [
-        {
-          "pattern": "^rhea:(\\d+)$"
-        },
-        {
-          "pattern": "^MITE(\\d{7,7})$"
-        },
-        {
-          "pattern": "^EC [0-9]+(\\.[0-9]+){0,3}$"
-        }
-      ]
+      "pattern": "^(\\d+)$"
+    },
+    "mite": {
+      "title": "MITE cross-reference",
+      "type": "string",
+      "pattern": "^MITE(\\d{7})$"
+    },
+    "ec": {
+      "title": "EC number (2-4 identifiers)",
+      "type": "string",
+      "pattern": "^EC [0-9]+(\\.[0-9]+){0,3}$"
     },
     "evidence": {
       "type": "object",

@@ -14,11 +14,12 @@ More information about the schema can be found in [the MITE publication](https:/
 
 ## Quick Start
 
+To validate your MITE-formatted .json-file, run:
+
 - `hatch run mite_schema -i <input.json>`
 
 ### For developers
 
-- Install `python3`
 - Install `hatch` using one of the methods described [here](https://hatch.pypa.io/1.12/install/)
 - Download or clone this repository
 - Run `hatch -v env create dev`. This will download and install the appropriate Python version and any required packages

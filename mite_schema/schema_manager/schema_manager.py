@@ -148,5 +148,6 @@ class SchemaManager(BaseModel):
             jsonschema.validate(instance=instance, schema=entry, registry=registry)
         except jsonschema.exceptions.ValidationError as e:
             raise ValueError(
-                f"SchemaManager: Validation of instance against MITE schema led to an error: '{e!s}"
+                f"SchemaManager: Validation of instance against "
+                f"MITE schema led to an error: '{e!s}"
             ) from e

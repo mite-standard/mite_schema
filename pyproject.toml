@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "mite_schema"
-version = "1.0"
+version = "1.1"
 description = "Containing the Minimum Information about a Tailoring Enzymes schema and auxiliary methods"
 readme = "README.md"
 requires-python = ">=3.12"
@@ -24,7 +24,6 @@ classifiers = [
     "Topic :: Scientific/Engineering :: Bio-Informatics",
     "Topic :: Scientific/Engineering :: Chemistry"
 ]
-
 dependencies = [
     "argparse~=1.4",
     "coloredlogs~=15.0",
@@ -32,6 +31,10 @@ dependencies = [
     "pydantic~=2.8",
     "referencing~=0.35",
 ]
+
+[project.urls]
+Homepage = "https://github.com/mite-standard/mite_schema"
+Issues = "https://github.com/mite-standard/mite_schema/issues"
 
 [project.scripts]
 mite_schema = "mite_schema.main:main"
