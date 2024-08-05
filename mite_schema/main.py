@@ -21,11 +21,14 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+import argparse
 import logging
 import sys
 from importlib import metadata
 
 import coloredlogs
+
+from mite_schema import SchemaManager
 
 
 def config_logger(verboseness: str) -> logging.Logger:
@@ -49,10 +52,67 @@ def config_logger(verboseness: str) -> logging.Logger:
     return logger
 
 
-def main() -> None:
-    """Function to execute main body of code"""
-    print("hello world")
+def setup_cli(args: list) -> argparse.Namespace:
+    """Run command line interface using argparse.
+
+    Arguments:
+        args: specified arguments
+
+    Returns:
+        argparse.Namespace object with command line parameters
+    """
+    parser = argparse.ArgumentParser(
+        description=(
+            f"'mite_extras' CLI using MITE schema v{metadata.version('mite_schema')}."
+        ),
+        formatter_class=argparse.RawTextHelpFormatter,
+    )
+
+    parser.add_argument(
+        "-i",
+        type=str,
+        required=True,
+        help="Specifies an input file for validation against schema.",
+    )
+
+    parser.add_argument(
+        "-v",
+        type=str,
+        default="WARNING",
+        choices=["DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"],
+        required=False,
+        help="Specifies the verboseness of logging (default: 'WARNING').",
+    )
+
+    return parser.parse_args(args)
+
+
+def main() -> bool:
+    """Function to execute main body of code
+
+    Returns:
+        A bool indicating the outcome of the validation
+    """
+    args = setup_cli(sys.argv[1:])
+    logger = config_logger(args.v)
+
+    logger.info(
+        f"Validate file '{args.i}' with MITE schema v{metadata.version('mite_schema')}."
+    )
+
+    try:
+        manager = SchemaManager()
+        data = manager.read_json(infile=args.i)
+        manager.validate_mite(instance=data)
+        logger.info(f"Completed validation against MITE schema.")
+        return True
+    except Exception as e:
+        logger.fatal(str(e))
+        return False
 
 
 if __name__ == "__main__":
-    main()
+    if main() is True:
+        exit(0)
+    else:
+        exit(1)

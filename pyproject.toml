@@ -19,7 +19,6 @@ dependencies = [
     "jsonschema~=4.23",
     "pydantic~=2.8",
     "referencing~=0.35",
-    "requests~=2.32"
 ]
 
 [project.scripts]
@@ -35,6 +34,16 @@ dev = [
 [tool.hatch.envs.dev]
 features = [
     "dev"
+]
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = [
+    "tests",
+]
+pythonpath = [
+  "mite_schema"
 ]
 
 [tool.ruff.lint]
