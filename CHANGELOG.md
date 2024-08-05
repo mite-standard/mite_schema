@@ -9,7 +9,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Added
 
-- Implemented MITE Schmea and SchemaManager()
+- Implemented MITE Schema and SchemaManager()
 
 ### Changed
 
