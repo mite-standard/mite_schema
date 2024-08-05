@@ -4,13 +4,25 @@ build-backend = "hatchling.build"
 
 [project]
 name = "mite_schema"
-version = "0.9.0"
+version = "1.0"
 description = "Containing the Minimum Information about a Tailoring Enzymes schema and auxiliary methods"
 readme = "README.md"
 requires-python = ">=3.12"
 license-files = { paths = ["LICENSE"] }
 authors = [
-    { name = "Mitja M. Zdouc", email = "mmzdouc@gmail.com" }
+    { name = "Mitja M. Zdouc", email = "zdoucmm@gmail.com" }
+]
+keywords = [
+    "cheminformatics",
+    "genomics"
+]
+classifiers = [
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+    "Development Status :: 4 - Beta",
+    "Topic :: Scientific/Engineering :: Bio-Informatics",
+    "Topic :: Scientific/Engineering :: Chemistry"
 ]
 
 dependencies = [
@@ -19,7 +31,6 @@ dependencies = [
     "jsonschema~=4.23",
     "pydantic~=2.8",
     "referencing~=0.35",
-    "requests~=2.32"
 ]
 
 [project.scripts]
@@ -35,6 +46,34 @@ dev = [
 [tool.hatch.envs.dev]
 features = [
     "dev"
+]
+
+[tool.hatch.build.targets.sdist]
+exclude = [
+  "/.idea/",
+  "/.github/",
+  "/.git/",
+  "/.pytest_cache/",
+  "/.ruff_cache/",
+  "/.venv",
+  "/tests/",
+  "/.gitignore",
+  "/.pre-commit-config.yaml",
+  "/CODE_OF_CONDUCT.md",
+  "/CONTRIBUTING.md"
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["mite_schema"]
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = [
+    "tests",
+]
+pythonpath = [
+  "mite_schema"
 ]
 
 [tool.ruff.lint]
