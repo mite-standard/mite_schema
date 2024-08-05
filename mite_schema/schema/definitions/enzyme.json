@@ -17,11 +17,19 @@
       "type": "string"
     },
     "databaseIds": {
-      "type": "array",
-      "items": {
-        "$ref": "#/$defs/databaseId"
-      },
-      "uniqueItems": true
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "uniprot": {
+          "$ref": "#/$defs/uniprot"
+        },
+        "genpept": {
+          "$ref": "#/$defs/genpept"
+        },
+        "mibig": {
+          "$ref": "#/$defs/mibig"
+        }
+      }
     },
     "auxiliaryEnzymes": {
       "title": "Specify any required auxiliary enzymes that are co-forming the maturation machinery.",
@@ -39,11 +47,16 @@
             "type": "string"
           },
           "databaseIds": {
-            "type": "array",
-            "items": {
-              "$ref": "#/$defs/databaseId"
-            },
-            "uniqueItems": true
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "uniprot": {
+                "$ref": "#/$defs/uniprot"
+              },
+              "genpept": {
+                "$ref": "#/$defs/genpept"
+              }
+            }
           }
         }
       }
@@ -58,26 +71,20 @@
     }
   },
   "$defs": {
-    "databaseId": {
+    "uniprot": {
+      "title": "Uniprot ID reference.",
       "type": "string",
-      "oneOf": [
-        {
-          "title": "Uniprot ID reference.",
-          "pattern": "^uniprot:[A-Z0-9]+$"
-        },
-        {
-          "title": "GenBank GenPept ID (= protein ID, GenBank gene products)",
-          "pattern": "^genpept:[A-Z]{3}[0-9]{5,7}\\.[0-9]+$"
-        },
-        {
-          "title": "MIBiG ID reference",
-          "pattern": "^mibig:BGC\\d{7}$"
-        },
-        {
-          "title": "Temporary MIBiG ID reference",
-          "pattern": "^mibig:new\\d+$"
-        }
-      ]
+      "pattern": "^[A-Z0-9]+$"
+    },
+    "genpept": {
+      "title": "GenBank GenPept ID (= protein ID, GenBank gene products)",
+      "type": "string",
+      "pattern": "^[A-Z]{3}[0-9]{5,7}\\.[0-9]+$"
+    },
+    "mibig": {
+      "title": "MIBiG ID reference",
+      "type": "string",
+      "pattern": "^BGC\\d{7}$|^new\\d+$"
     }
   }
 }
