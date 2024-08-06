@@ -16,7 +16,7 @@ More information about the schema can be found in [the MITE publication](https:/
 
 To validate your MITE-formatted .json-file, run:
 
-- `hatch run mite_schema -i <input.json>`
+- `mite_schema -i <input.json>`
 
 ### For developers
 
