@@ -109,8 +109,6 @@ class SchemaManager(BaseModel):
     def validate_mite(self: Self, instance: dict):
         """Validate a dictionary against the MITE JSON schema
 
-        Loads 'changelog' and 'citation' from remote (MIBiG)
-
         Arguments:
             instance: a dictionary representing a json file
 
