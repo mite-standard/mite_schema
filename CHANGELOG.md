@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3] 11-08-2024
+
+### Changed
+
+- schema/reactions: 'databaseIds' accepts now arrays of strings (before: a single string, see also v1.1). This allows to e.g. specify multiple MITE cross-references instead of a single one.
+
 ## [1.2] 07-08-2024
 
 ### Changed
