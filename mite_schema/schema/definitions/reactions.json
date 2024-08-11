@@ -34,13 +34,25 @@
       "additionalProperties": false,
       "properties": {
         "rhea": {
-          "$ref": "#/$defs/rhea"
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/rhea"
+          }
         },
         "mite": {
-          "$ref": "#/$defs/mite"
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/mite"
+          }
         },
         "ec": {
-          "$ref": "#/$defs/ec"
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/ec"
+          }
         }
       }
     },

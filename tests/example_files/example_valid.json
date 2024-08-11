@@ -68,7 +68,9 @@
                 }
             ],
             "databaseIds": {
-                "mite": "MITE0000000"
+                "mite": ["MITE0000000", "MITE1000000"],
+                "rhea": ["1234", "5678"],
+                "ec": ["EC 1.2.3.4", "EC 1.2"]
             },
             "evidence": [
                 {
