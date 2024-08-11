@@ -1,6 +1,9 @@
 mite_schema
 =========
 
+[![DOI](https://zenodo.org/badge/838326204.svg)](https://zenodo.org/doi/10.5281/zenodo.13294150)
+[![PyPI version](https://badge.fury.io/py/mite-schema.svg)](https://badge.fury.io/py/mite-schema)
+
 This repository contains the schema of the **Minimum Information about a Tailoring Enzyme** data standard. 
 
 Furthermore, this repository provides functionality to validate files against said schema.
