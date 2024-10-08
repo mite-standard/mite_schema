@@ -105,14 +105,11 @@ def main() -> bool:
         data = manager.read_json(infile=args.i)
         manager.validate_mite(instance=data)
         logger.info(f"Completed validation against MITE schema.")
-        return True
+        exit(0)
     except Exception as e:
         logger.fatal(str(e))
-        return False
+        exit(1)
 
 
 if __name__ == "__main__":
-    if main() is True:
-        exit(0)
-    else:
-        exit(1)
+    main()
