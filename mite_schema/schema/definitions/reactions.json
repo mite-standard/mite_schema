@@ -61,18 +61,13 @@
       "type": "object",
       "additionalProperties": false,
       "required": [
-        "reactionSMARTS",
-        "isIterative"
+        "reactionSMARTS"
       ],
       "properties": {
         "reactionSMARTS": {
           "title": "The reaction SMARTS or reaction CXSMARTS string",
           "type": "string",
           "pattern": "^.+>>.+$"
-        },
-        "isIterative": {
-          "title": "Flag to indicate if the reaction is applied iteratively (modifying all possible substructures).",
-          "type": "boolean"
         }
       }
     },
@@ -86,7 +81,6 @@
         "required": [
           "substrate",
           "products",
-          "isBalanced",
           "isIntermediate"
         ],
         "properties": {
@@ -108,10 +102,6 @@
             "items": {
               "type": "string"
             }
-          },
-          "isBalanced": {
-            "title": "Is the validated reaction balanced (i.e. stoichiometric complete)?",
-            "type": "boolean"
           },
           "isIntermediate": {
             "title": "Is this validated reaction an intermediate step (i.e. not the final product)?",

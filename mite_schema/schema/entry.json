@@ -5,7 +5,6 @@
   "additionalProperties": false,
   "required": [
     "accession",
-    "quality",
     "status",
     "changelog",
     "enzyme",
@@ -15,10 +14,6 @@
     "accession": {
       "title": "MITE accession number/identifier.",
       "$ref": "#/$defs/accession"
-    },
-    "quality": {
-      "title": "Track quality of entry.",
-      "$ref": "#/$defs/quality"
     },
     "status": {
       "title": "Track status of entry.",
@@ -59,10 +54,6 @@
     "accession": {
       "type": "string",
       "pattern": "^MITE\\d{7,7}$"
-    },
-    "quality": {
-      "type": "string",
-      "enum": ["questionable", "low", "medium", "high"]
     },
     "status": {
       "type": "string",
