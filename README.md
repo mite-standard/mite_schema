@@ -17,9 +17,9 @@ More information about the schema can be found in [the MITE publication](https:/
 
 ## Quick Start
 
-To validate your MITE-formatted .json-file, run:
+To validate your MITE-formatted .json-file(s), run:
 
-- `mite_schema -i <input.json>`
+- `mite_schema -i <input1.json input2.json ... inputN.json>`
 
 ### For developers
 

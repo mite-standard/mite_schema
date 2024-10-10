@@ -72,7 +72,8 @@ def setup_cli(args: list) -> argparse.Namespace:
         "-i",
         type=str,
         required=True,
-        help="Specifies an input file for validation against schema.",
+        nargs="+",
+        help="Specifies one or more input files for validation against schema (separated by whitespace).",
     )
 
     parser.add_argument(
@@ -100,15 +101,17 @@ def main() -> bool:
         f"Validate file '{args.i}' with MITE schema v{metadata.version('mite_schema')}."
     )
 
-    try:
-        manager = SchemaManager()
-        data = manager.read_json(infile=args.i)
-        manager.validate_mite(instance=data)
-        logger.info(f"Completed validation against MITE schema.")
-        exit(0)
-    except Exception as e:
-        logger.fatal(str(e))
-        exit(1)
+    for file in args.i:
+        try:
+            manager = SchemaManager()
+            data = manager.read_json(infile=file)
+            manager.validate_mite(instance=data)
+        except Exception as e:
+            logger.fatal(str(e))
+            exit(1)
+
+    logger.info(f"Completed validation against MITE schema.")
+    exit(0)
 
 
 if __name__ == "__main__":
