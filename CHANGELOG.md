@@ -9,8 +9,8 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Changed
 
-- Reduced allowed references to DOI alone
-
+- References: removed non-peristing reference types, only DOI allowed
+- Changelog: Flattened structure, changed identifiers to ORCID, changed versioning to major alone (before 'major.minor')
 
 ## [1.4.1] 08-10-2024
 

@@ -1,27 +1,31 @@
 {
     "accession": "MITE0000055",
     "status": "pending",
-    "changelog": {
-        "releases": [
-            {
-                "version": "1.0",
-                "date": "2024-07-30",
-                "entries": [
-                    {
-                        "contributors": [
-                            "G42B4RI57WLTDHDCD4PMU3MJ",
-                            "C62OJVVH7XOTOTFZSJT727YU"
-                        ],
-                        "reviewers": [
-                            "AAAAAAAAAAAAAAAAAAAAAAAA"
-                        ],
-                        "date": "2024-07-23",
-                        "comment": "Initial entry."
-                    }
-                ]
-            }
-        ]
-    },
+    "changelog": [
+        {
+            "version": "1",
+            "contributors": [
+                "G42B4RI57WLTDHDCD4PMU3MJ",
+                "C62OJVVH7XOTOTFZSJT727YU"
+            ],
+            "reviewers": [
+                "BBBBBBBBBBBBBBBBBBBBBBBB"
+            ],
+            "date": "2024-07-23",
+            "comment": "Initial entry."
+        },
+        {
+            "version": "2",
+            "contributors": [
+                "BBBBBBBBBBBBBBBBBBBBBBBB"
+            ],
+            "reviewers": [
+                "BBBBBBBBBBBBBBBBBBBBBBBB"
+            ],
+            "date": "2024-11-23",
+            "comment": "Some minor changes."
+        }
+    ],
     "enzyme": {
         "name": "McjC",
         "description": "Lassopeptide ATP-dependent lactam synthetase (C-protein, asparagine synthetase-like)",

@@ -1,76 +1,50 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "type": "object",
+  "type": "array",
   "additionalProperties": false,
-  "properties": {
-    "releases": {
-      "type": "array",
-      "items": {
-        "$ref": "#/$defs/release"
+  "items": {
+    "type": "object",
+    "required": [
+      "version",
+      "date",
+      "comment"
+    ],
+    "additionalProperties": false,
+    "properties": {
+      "version": {
+        "title": "The version of the entry.",
+        "type": "string",
+        "pattern": "^\\d+$"
       },
-      "minItems": 1,
-      "uniqueItems": true
-    }
-  },
-  "required": ["releases"],
-  "$defs": {
-    "entry": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "contributors": {
-          "type": "array",
-          "items": {
-            "$ref": "#/$defs/submitter"
-          },
-          "minItems": 1,
-          "uniqueItems": true
-        },
-        "reviewers": {
-          "type": "array",
-          "items": {
-            "$ref": "#/$defs/submitter"
-          },
-          "minItems": 1,
-          "uniqueItems": true
-        },
-        "date": {
-          "type": "string",
-          "format": "date"
-        },
-        "comment": {
+      "date": {
+        "title": "The date of the modification.",
+        "type": "string",
+        "format": "date"
+      },
+      "comment": {
+        "title": "A brief summary of changes.",
+        "type": "string"
+      },
+      "contributors": {
+        "title": "A list of identifiers of submitters.",
+        "type": "array",
+        "items": {
+          "title": "An ORCID identifier",
           "type": "string"
-        }
-      },
-      "required": ["contributors", "reviewers", "date", "comment"]
-    },
-    "release": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "version": {
-          "type": "string",
-          "pattern": "^(\\d+(\\.\\d+)*|next)$"
         },
-        "date": {
-          "type": "string",
-          "format": "date"
-        },
-        "entries": {
-          "type": "array",
-          "items": {
-            "$ref": "#/$defs/entry"
-          },
-          "minItems": 1,
-          "uniqueItems": true
-        }
+        "minItems": 1,
+        "uniqueItems": true
       },
-      "required": ["version", "date", "entries"]
-    },
-    "submitter": {
-      "type": "string",
-      "minLength": 24,
-      "maxLength": 24
+      "reviewers": {
+        "title": "A list of identifiers of reviewers.",
+        "type": "array",
+        "items": {
+          "title": "An ORCID identifier",
+          "type": "string"
+        },
+        "minItems": 1,
+        "uniqueItems": true
+      }
     }
   }
 }
