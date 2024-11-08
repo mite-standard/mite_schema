@@ -9,8 +9,10 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Changed
 
-- Changelog: Flattened structure, changed identifiers to ORCID, changed versioning to major alone (before 'major.minor')
-- Evidence: Flattened structure to a single object (before: a list of objects)
+- Changelog: flattened structure, changed identifiers to ORCID, changed versioning to major alone (before 'major.minor')
+- Reaction database IDs: flattened structure, changed formatting of EC to the code (e.g. 1.2.3.4) alone (before: string had to start with 'EC'), drop MITE crosslinks
+- Tailoring reaction terms: removed 'FADH2 supply for chlorination' since it is not tailoring per se
+- Evidence: flattened structure to a single object (before: a list of objects)
 - References: removed non-peristing reference types, only DOI allowed (before: url, pubmed, patent)
 
 ## [1.4.1] 08-10-2024
