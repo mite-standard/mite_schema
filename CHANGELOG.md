@@ -9,6 +9,13 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Changed
 
+- Reduced allowed references to DOI alone
+
+
+## [1.4.1] 08-10-2024
+
+### Changed
+
 - CLI: added support for multiple input files checking at once
 
 ## [1.4] 08-10-2024
