@@ -73,17 +73,15 @@
                 "rhea": ["1234", "5678"],
                 "ec": ["EC 1.2.3.4", "EC 1.2"]
             },
-            "evidence": [
-                {
-                    "evidenceCode": [
-                        "Site-directed mutagenesis",
-                        "Heterologous expression"
-                    ],
-                    "references": [
-                        "doi:10.1074/jbc.M803995200"
-                    ]
-                }
-            ]
+            "evidence": {
+                "evidenceCode": [
+                    "Site-directed mutagenesis",
+                    "Heterologous expression"
+                ],
+                "references": [
+                    "doi:10.1074/jbc.M803995200"
+                ]
+            }
         }
     ]
 }
