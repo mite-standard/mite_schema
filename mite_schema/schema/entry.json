@@ -57,7 +57,7 @@
     },
     "status": {
       "type": "string",
-      "enum": ["pending", "embargoed", "active", "retired"]
+      "enum": ["pending", "active", "retired"]
     }
   }
 }

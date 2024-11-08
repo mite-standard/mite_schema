@@ -22,54 +22,60 @@
       "type": "string"
     },
     "evidence": {
-      "type": "array",
-      "items": {
-        "$ref": "#/$defs/evidence"
-      },
-      "minItems": 1,
-      "uniqueItems": true
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "evidenceCode",
+        "references"
+      ],
+      "properties": {
+        "evidenceCode": {
+          "title": "Evidence for enzymatic reaction and substrate specificity",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "enum": [
+              "Heterologous expression",
+              "Inference from genomic data and chemical structure",
+              "In vitro assay",
+              "Isothermal titration calorimetry",
+              "Knock-out studies",
+              "Site-directed mutagenesis",
+              "Surface plasmon resonance"
+            ]
+          }
+        },
+        "references": {
+          "type": "array",
+          "items": {
+            "$ref": "citation.json"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      }
     },
     "databaseIds": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
         "rhea": {
-          "type": "array",
-          "uniqueItems": true,
-          "items": {
-            "$ref": "#/$defs/rhea"
-          }
-        },
-        "mite": {
-          "type": "array",
-          "uniqueItems": true,
-          "items": {
-            "$ref": "#/$defs/mite"
-          }
+          "title": "RHEA cross-reference",
+          "type": "string",
+          "pattern": "^(\\d+)$"
         },
         "ec": {
-          "type": "array",
-          "uniqueItems": true,
-          "items": {
-            "$ref": "#/$defs/ec"
-          }
+          "title": "EC number (2-4 identifiers)",
+          "type": "string",
+          "pattern": "^[0-9]+(\\.[0-9]+){0,3}$"
         }
       }
     },
     "reactionSMARTS": {
       "title": "A reaction SMARTS pattern describing the (sub)structure to match and the reaction to perform.",
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "reactionSMARTS"
-      ],
-      "properties": {
-        "reactionSMARTS": {
-          "title": "The reaction SMARTS or reaction CXSMARTS string",
-          "type": "string",
-          "pattern": "^.+>>.+$"
-        }
-      }
+      "type": "string",
+      "pattern": "^.+>>.+$"
     },
     "reactions": {
       "type": "array",
@@ -81,7 +87,8 @@
         "required": [
           "substrate",
           "products",
-          "isIntermediate"
+          "isIntermediate",
+          "description"
         ],
         "properties": {
           "substrate": {
@@ -132,7 +139,6 @@
         "Demethylation",
         "Dioxygenation",
         "Epimerization",
-        "FADH2 supply for chlorination",
         "Glycosylation",
         "Halogenation",
         "Heterocyclization",
@@ -148,56 +154,6 @@
         "Sulfation",
         "Other"
       ]
-    },
-    "rhea": {
-      "title": "RHEA cross-reference",
-      "type": "string",
-      "pattern": "^(\\d+)$"
-    },
-    "mite": {
-      "title": "MITE cross-reference",
-      "type": "string",
-      "pattern": "^MITE(\\d{7})$"
-    },
-    "ec": {
-      "title": "EC number (2-4 identifiers)",
-      "type": "string",
-      "pattern": "^EC [0-9]+(\\.[0-9]+){0,3}$"
-    },
-    "evidence": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "evidenceCode",
-        "references"
-      ],
-      "properties": {
-        "evidenceCode": {
-          "title": "Evidence for enzymatic reaction and substrate specificity",
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "type": "string",
-            "enum": [
-              "Heterologous expression",
-              "Inference from genomic data and chemical structure",
-              "In vitro assay",
-              "Isothermal titration calorimetry",
-              "Knock-out studies",
-              "Site-directed mutagenesis",
-              "Surface plasmon resonance"
-            ]
-          }
-        },
-        "references": {
-          "type": "array",
-          "items": {
-            "$ref": "citation.json"
-          },
-          "minItems": 1,
-          "uniqueItems": true
-        }
-      }
     }
   }
 }
