@@ -87,8 +87,7 @@
         "required": [
           "substrate",
           "products",
-          "isIntermediate",
-          "description"
+          "isIntermediate"
         ],
         "properties": {
           "substrate": {
