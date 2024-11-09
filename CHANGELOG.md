@@ -7,10 +7,10 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [1.5.1] 09-11-2024
 
+### Changed
+
 - Reaction: made "description" of reaction examples optional for backward compatibility
 - Made DOI pattern matching less stringent
-
-### Changed
 
 ## [1.5.0] 08-11-2024
 
