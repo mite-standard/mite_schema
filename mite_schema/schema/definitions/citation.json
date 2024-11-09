@@ -3,7 +3,7 @@
   "type": "string",
   "oneOf": [
     {
-      "pattern": "^doi:10\\.\\d{4,9}/[-\\._;()/:a-zA-Z0-9]+$"
+      "pattern": "^doi:10\\."
     }
   ]
 }
