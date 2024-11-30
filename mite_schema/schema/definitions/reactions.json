@@ -150,7 +150,10 @@
         "Phosphorylation",
         "Prenylation",
         "Reduction",
+        "Ring contraction",
+        "Ring expansion",
         "Sulfation",
+        "Sulfonation",
         "Other"
       ]
     }
