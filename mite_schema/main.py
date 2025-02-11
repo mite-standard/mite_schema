@@ -88,7 +88,7 @@ def setup_cli(args: list) -> argparse.Namespace:
     return parser.parse_args(args)
 
 
-def main() -> bool:
+def main() -> None:
     """Function to execute main body of code
 
     Returns:
