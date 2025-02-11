@@ -28,7 +28,6 @@ from typing import Self
 
 import jsonschema
 from pydantic import BaseModel, ValidationError, model_validator
-from referencing import Registry, Resource
 
 logger = logging.getLogger("mite_schema")
 
@@ -38,37 +37,13 @@ class SchemaManager(BaseModel):
 
     Attributes:
         entry: path to base specs of the MITE json schema
-        enzyme: path to specs of the enzyme (meta)data
-        reactions: path to specs of reaction data
-        changelog: path to specs of changelog data (shared with MIBiG)
-        citation: path to specs of citation data (shared with MIBiG)
     """
 
     entry: Path = Path(__file__).parent.parent.joinpath("schema/entry.json")
-    enzyme: Path = Path(__file__).parent.parent.joinpath(
-        "schema/definitions/enzyme.json"
-    )
-    reactions: Path = Path(__file__).parent.parent.joinpath(
-        "schema/definitions/reactions.json"
-    )
-    changelog: Path = Path(__file__).parent.parent.joinpath(
-        "schema/definitions/changelog.json"
-    )
-    citation: Path = Path(__file__).parent.parent.joinpath(
-        "schema/definitions/citation.json"
-    )
 
     @model_validator(mode="after")
     def validate_files(self):
-        if not all(
-            (
-                self.entry.exists(),
-                self.enzyme.exists(),
-                self.reactions.exists(),
-                self.changelog.exists(),
-                self.citation.exists(),
-            )
-        ):
+        if not self.entry.exists():
             raise ValidationError
         return self
 
@@ -119,31 +94,9 @@ class SchemaManager(BaseModel):
 
         with open(self.entry) as infile:
             entry = json.load(infile)
-        with open(self.enzyme) as infile:
-            enzyme = json.load(infile)
-        with open(self.reactions) as infile:
-            reactions = json.load(infile)
-        with open(self.changelog) as infile:
-            changelog = json.load(infile)
-        with open(self.citation) as infile:
-            citation = json.load(infile)
-
-        registry = Registry()
-        registry = registry.with_resource(
-            resource=Resource.from_contents(changelog), uri="definitions/changelog.json"
-        )
-        registry = registry.with_resource(
-            resource=Resource.from_contents(citation), uri="definitions/citation.json"
-        )
-        registry = registry.with_resource(
-            resource=Resource.from_contents(enzyme), uri="definitions/enzyme.json"
-        )
-        registry = registry.with_resource(
-            resource=Resource.from_contents(reactions), uri="definitions/reactions.json"
-        )
 
         try:
-            jsonschema.validate(instance=instance, schema=entry, registry=registry)
+            jsonschema.validate(instance=instance, schema=entry)
         except jsonschema.exceptions.ValidationError as e:
             raise ValueError(
                 f"SchemaManager: Validation of instance against "

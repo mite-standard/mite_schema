@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "mite_schema"
-version = "1.6.0"
+version = "1.7.0"
 description = "Containing the Minimum Information about a Tailoring Enzymes schema and auxiliary methods"
 readme = "README.md"
 requires-python = ">=3.11"
@@ -30,7 +30,6 @@ dependencies = [
     "coloredlogs~=15.0",
     "jsonschema~=4.23",
     "pydantic~=2.8",
-    "referencing~=0.35",
 ]
 
 [project.urls]
