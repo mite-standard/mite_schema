@@ -164,7 +164,8 @@
           "tailoring",
           "reactionSMARTS",
           "reactions",
-          "evidence"
+          "evidence",
+          "isIntramolecular"
         ],
         "properties": {
           "tailoring": {
@@ -221,6 +222,10 @@
           "reactionSMARTS": {
             "title": "A reaction SMARTS pattern describing the (sub)structure to match and the reaction to perform.",
             "$ref": "#/$defs/reactionsmarts"
+          },
+          "isIntramolecular": {
+            "title": "Is this reaction intramolecular, e.g. a macrocyclization?",
+            "type": "boolean"
           },
           "reactions": {
             "type": "array",
