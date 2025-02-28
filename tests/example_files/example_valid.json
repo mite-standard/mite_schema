@@ -76,7 +76,8 @@
             "evidence": {
                 "evidenceCode": [
                     "Site-directed mutagenesis",
-                    "Heterologous expression"
+                    "Heterologous expression",
+                    "Chemical probe"
                 ],
                 "references": [
                     "doi:10.1074/jbc.M803995200"
