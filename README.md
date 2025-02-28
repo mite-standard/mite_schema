@@ -4,12 +4,12 @@ mite_schema
 [![DOI](https://zenodo.org/badge/838326204.svg)](https://zenodo.org/doi/10.5281/zenodo.13294150)
 [![PyPI version](https://badge.fury.io/py/mite-schema.svg)](https://badge.fury.io/py/mite-schema)
 
-This repository contains the schema of the **Minimum Information about a Tailoring Enzyme** data standard. 
+This repository contains the schema of the **MITE** data standard. 
 
 Furthermore, this repository provides functionality to validate files against said schema.
 It can be used as command line interface or as library. For command line use, see the installation instructions below.
 
-More information about the schema can be found in [the MITE publication](https://doi.org/10.26434/chemrxiv-2024-78mtl).
+For more information, see the [MITE Data Standard Organization page](https://github.com/mite-standard).
 
 ## Installation
 
