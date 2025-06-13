@@ -9,7 +9,8 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Added
 
-- Added "cofactor" to "enzyme"
+- Added optional "cofactor" to "enzyme"
+- Added optional "wikidata" crossref to "databaseIds" of "enzyme" and "auxiliary enzymes"
 
 ## [1.7.1] 13-02-2025
 
