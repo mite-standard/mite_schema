@@ -99,6 +99,30 @@
           "title": "Brief description of the enzyme function.",
           "type": "string"
         },
+        "cofactors": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "inorganic": {
+              "title": "One or more inorganic cofactors (ions).",
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "$ref": "#/$defs/inorganic"
+              }
+            },
+            "organic": {
+              "title": "One or more organic cofactors (coenzymes/cosubstrates/prosthetic groups).",
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": {
+                "$ref": "#/$defs/organic"
+              }
+            }
+          }
+        },
         "databaseIds": {
           "type": "object",
           "additionalProperties": false,
@@ -111,6 +135,9 @@
             },
             "mibig": {
               "$ref": "#/$defs/mibig"
+            },
+            "wikidata": {
+              "$ref": "#/$defs/wikidata"
             }
           }
         },
@@ -138,6 +165,9 @@
                   },
                   "genpept": {
                     "$ref": "#/$defs/genpept"
+                  },
+                  "wikidata": {
+                    "$ref": "#/$defs/wikidata"
                   }
                 }
               }
@@ -301,6 +331,11 @@
       "type": "string",
       "pattern": "^BGC\\d{7}$|^new\\d+$"
     },
+    "wikidata": {
+      "title": "Wikidata reference",
+      "type": "string",
+      "pattern": "^Q\\d+$"
+    },
     "rhea": {
       "title": "RHEA cross-reference",
       "type": "string",
@@ -326,6 +361,55 @@
         "Knock-out studies",
         "Site-directed mutagenesis",
         "Surface plasmon resonance"
+      ]
+    },
+    "inorganic": {
+      "type": "string",
+      "enum": [
+        "Cu",
+        "Fe",
+        "Mg",
+        "Mn",
+        "Mo",
+        "Ni",
+        "Zn",
+        "FeS"
+      ]
+    },
+    "organic": {
+      "type": "string",
+      "enum": [
+        "Ascorbic acid",
+        "a-Ketoglutaric acid",
+        "Adenosine triphosphate",
+        "Biotin",
+        "Cobalamin",
+        "Coenzyme A",
+        "Coenzyme B",
+        "Coenzyme F420",
+        "Coenzyme M",
+        "Coenzyme Q10",
+        "Cytidine triphosphate",
+        "FAD",
+        "Flavin mononucleotide",
+        "Folate",
+        "Glutathione",
+        "Heme",
+        "Lipoamide",
+        "Methylcobalamin",
+        "Menaquinone",
+        "Methanofuran",
+        "Molybdopterin",
+        "NAD",
+        "NADP",
+        "PAPS",
+        "Pyridoxal phosphate",
+        "Pyrroloquinoline quinone",
+        "SAM",
+        "Tetrahydrobiopterin",
+        "Tetrahydrofolic acid",
+        "Tetrahydromethanopterin",
+        "Thiamine pyrophosphate"
       ]
     },
     "tailoringFunction": {

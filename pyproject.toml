@@ -4,8 +4,8 @@ build-backend = "hatchling.build"
 
 [project]
 name = "mite_schema"
-version = "1.7.1"
-description = "Containing the Minimum Information about a Tailoring Enzymes schema and auxiliary methods"
+version = "1.8.0"
+description = "Containing the Minimum Information about a Tailoring Enzymes data standard schema and auxiliary methods"
 readme = "README.md"
 requires-python = ">=3.11"
 license-files = { paths = ["LICENSE"] }
@@ -33,6 +33,7 @@ dependencies = [
 ]
 
 [project.urls]
+Website = "https://mite.bioinformatics.nl/"
 Homepage = "https://github.com/mite-standard/mite_schema"
 Issues = "https://github.com/mite-standard/mite_schema/issues"
 

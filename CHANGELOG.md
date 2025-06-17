@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.8.0] 17-06-2025
+
+### Added
+
+- Added optional "cofactor" to "enzyme"
+- Added optional "wikidata" crossref to "databaseIds" of "enzyme" and "auxiliary enzymes"
+
 ## [1.7.1] 13-02-2025
 
 ### Added

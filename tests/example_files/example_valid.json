@@ -38,13 +38,22 @@
             "doi:10.1128/jb.181.8.2659-2662.1999",
             "doi:10.1002/cbic.201200016"
         ],
+        "cofactors": {
+            "inorganic": [
+                "Fe"
+            ],
+            "organic": [
+                "Heme"
+            ]
+        },
         "auxiliaryEnzymes": [
             {
                 "name": "McjB",
                 "description": "Lassopeptide cysteine protease. Required for macrolactam-synthethase function (folds and cleaves precursor peptide)",
                 "databaseIds": {
                     "uniprot": "Q9X2V8",
-                    "genpept": "AAD28495.1"
+                    "genpept": "AAD28495.1",
+                    "wikidata": "Q24776184"
                 }
             }
         ]
