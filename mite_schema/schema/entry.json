@@ -32,7 +32,6 @@
     "changelog": {
       "title": "Log tracking changes in entry.",
       "type": "array",
-      "minItems": 1,
       "additionalProperties": false,
       "items": {
         "type": "object",
