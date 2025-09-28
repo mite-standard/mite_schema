@@ -11,6 +11,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 - Switched installer from `hatch` to `uv`
 - Updated dependencies
+- Updated CITATION.cff
 
 ## [1.8.2] 29-08-2025
 
