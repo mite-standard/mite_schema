@@ -36,6 +36,7 @@ dependencies = [
 Website = "https://mite.bioinformatics.nl/"
 Homepage = "https://github.com/mite-standard/mite_schema"
 Issues = "https://github.com/mite-standard/mite_schema/issues"
+Discussions = "https://github.com/orgs/mite-standard/discussions/3"
 
 [project.scripts]
 mite_schema = "mite_schema.main:main"
