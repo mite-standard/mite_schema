@@ -23,8 +23,8 @@ To validate your MITE-formatted .json-file(s), run:
 
 ### For developers
 
-- Install `hatch` using one of the methods described [here](https://hatch.pypa.io/1.12/install/)
+- Install `uv` using one of the methods described [here](https://docs.astral.sh/uv/getting-started/installation/)
 - Download or clone this repository
-- Run `hatch -v env create dev`. This will download and install the appropriate Python version and any required packages
-- Run `hatch run dev:pre-commit install`. This will set up `pre-commit`
-- If necessary, remove the environment with `hatch env remove dev`
+- Run `uv sync --extra dev`. This will download and install the appropriate Python version and any required packages
+- Run all tests using `uv run pytest`
+- Run `uv run pre-commit install`. This will set up `pre-commit`
