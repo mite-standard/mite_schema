@@ -26,4 +26,5 @@ To validate your MITE-formatted .json-file(s), run:
 - Install `uv` using one of the methods described [here](https://docs.astral.sh/uv/getting-started/installation/)
 - Download or clone this repository
 - Run `uv sync --extra dev`. This will download and install the appropriate Python version and any required packages
+- Run all tests using `uv run pytest`
 - Run `uv run pre-commit install`. This will set up `pre-commit`
