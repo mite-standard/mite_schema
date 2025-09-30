@@ -97,4 +97,4 @@ uv run pytest
 
 CI/CD via GitHub Actions runs on every PR and push to the `main` branch.
 
-A new release created on the [mite_schema](https://github.com/mite-standard/mite_schema) GitHub page will automatically relay changes to [PyPI](https://pypi.org/project/mite-schema/) and [Zenodo](https://zenodo.org/records/16994154).
+A new release created on the [mite_schema](https://github.com/mite-standard/mite_schema) GitHub page will automatically relay changes to [PyPI](https://pypi.org/project/mite-schema/) and [Zenodo](https://doi.org/10.5281/zenodo.13294150).
