@@ -63,5 +63,5 @@ repos:
     - id: pytest
       name: pytest
       entry: uv run pytest
-      pass_filenames: false
       language: system
+      types: [ file, python ]
