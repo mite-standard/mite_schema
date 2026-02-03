@@ -52,7 +52,7 @@ repos:
   rev: v1
   hooks:
     - id: typos
-      exclude: "CITATION.cff"
+      exclude: "CITATION.cff|README.md"
 - repo: local
   hooks:
     - id: uv-upgrade
