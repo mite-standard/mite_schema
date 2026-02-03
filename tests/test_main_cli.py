@@ -12,7 +12,8 @@ def test_no_attrs(monkeypatch):
 
 def test_cli_single_valid(monkeypatch):
     monkeypatch.setattr(
-        "sys.argv", ["mite-schema", "-i", "tests/example_files/example_valid.json"]
+        "sys.argv",
+        ["mite-schema", "-i", "tests/example_files/example_valid.json"],
     )
     with pytest.raises(SystemExit) as e:
         main()
@@ -36,7 +37,8 @@ def test_cli_multi_valid(monkeypatch):
 
 def test_cli_single_invalid(monkeypatch):
     monkeypatch.setattr(
-        "sys.argv", ["mite-schema", "-i", "tests/example_files/example_invalid.json"]
+        "sys.argv",
+        ["mite-schema", "-i", "tests/example_files/example_invalid.json"],
     )
     with pytest.raises(SystemExit) as e:
         main()
@@ -45,7 +47,8 @@ def test_cli_single_invalid(monkeypatch):
 
 def test_cli_multi_invalid(monkeypatch):
     monkeypatch.setattr(
-        "sys.argv", ["mite-schema", "-i", "tests/example_files/example_invalid.json"]
+        "sys.argv",
+        ["mite-schema", "-i", "tests/example_files/example_invalid.json"],
     )
     with pytest.raises(SystemExit) as e:
         main()
