@@ -45,8 +45,8 @@ def config_logger(verboseness: str) -> logging.Logger:
     console_handler = logging.StreamHandler(sys.stdout)
     console_handler.setFormatter(
         coloredlogs.ColoredFormatter(
-            "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
-        )
+            "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+        ),
     )
     logger.addHandler(console_handler)
     return logger
@@ -98,7 +98,7 @@ def main() -> None:
     logger = config_logger(args.v)
 
     logger.info(
-        f"Validate file '{args.i}' with MITE schema v{metadata.version('mite_schema')}."
+        f"Validate file '{args.i}' with MITE schema v{metadata.version('mite_schema')}.",
     )
 
     for file in args.i:
