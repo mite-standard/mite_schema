@@ -9,6 +9,10 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Changed
 
+## [1.8.4] 25-10-2025
+
+### Changed
+
 - Auto-upgrade of `uv.lock` on with `pre-commit`
 
 ## [1.8.3] 30-09-2025
