@@ -9,6 +9,9 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Changed
 
+- Moved build logic from `hatch` to `uv`
+- Updated tailoring terms
+
 ## [1.8.4] 25-10-2025
 
 ### Changed
