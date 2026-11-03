@@ -9,7 +9,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Added
 
-- Added optional `enzyme.taxid` field (NCBI Taxonomy ID, digits only)
+- Added optional `enzyme.taxid` field (NCBI Taxonomy ID, pattern following bioregistry)
 
 ## [1.8.5] 17-07-2026
 
