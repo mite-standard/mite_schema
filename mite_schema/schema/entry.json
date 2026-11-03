@@ -451,9 +451,9 @@
       ]
     },
     "taxid": {
-      "title": "Taxonomy ID",
+      "title": "NCBI Taxonomy ID",
       "type": "string",
-      "pattern": "^(\\d+)$"
+      "pattern": "^(\\d+|[a-zA-Z_]+)$"
     }
   }
 }
