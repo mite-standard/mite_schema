@@ -180,6 +180,9 @@
           },
           "minItems": 1,
           "uniqueItems": true
+        },
+        "taxid": {
+          "$ref": "#/$defs/taxid"
         }
       }
     },
@@ -446,6 +449,11 @@
         "Sulfonation",
         "Other"
       ]
+    },
+    "taxid": {
+      "title": "NCBI Taxonomy ID",
+      "type": "string",
+      "pattern": "^(\\d+|[a-zA-Z_]+)$"
     }
   }
 }
